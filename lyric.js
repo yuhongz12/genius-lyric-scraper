@@ -2,7 +2,6 @@ const Express = require('express');
 const Genius = require("genius-lyrics");
 const Client = new Genius.Client('FYpBpehTjRGU-tl2FnHN4eepKxIP6h0O_iy-9-umsxOBJOFt8C_kZ9Dp0xSujS_V');
 const cors = require('cors');
-const axios = require("axios");
 const app = Express();
 
 app.use(cors());
@@ -40,5 +39,5 @@ app.get('/lyric', async (req, res) => {
     res.send(lyrics);
 })
 
-app.listen( env.process.PORT || 4000);
+app.listen(process.env.PORT || 4000);
 
